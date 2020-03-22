@@ -21,6 +21,7 @@
 
 <body>
 
+    <div class="container">
     
     <!--
         Psedocode for html layout
@@ -41,7 +42,42 @@
         Button to start the quiz
     -->
 
+        <!-- Top Bar -->
+        <section class="row">
+            <div class="col-sm-6 opt_left top_opts ">
+                <a href="./Assets/HTML/highscores.html">
+                    Highscores
+                </a>
+            </div>
+            <div class="col-sm-6 opt_right top_opts">
+                Time: <span class="timer">60</span>
+            </div>
+        </section>
 
+        <!-- Body of Main Page -->
+        <section class="row" id="main_page">
+            <div class="col-12 center_that">
+                <h1>
+                    It's Quiz Time!
+                </h1>
+            </div>
+            <div class="col-12 description_p center_that">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto distinctio velit quibusdam, pariatur nam laudantium provident vel nemo optio quia veniam eum perspiciatis dicta nostrum. Aspernatur quia doloribus delectus accusamus!
+                </p>
+            </div>
+            <div class="col-12 center_that">
+                <button id="quiz_btn">
+                    Start Quiz
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Test Appear -->
+        <section class="hide" id="quiz_cont">
+            <h1>You did it!!!</h1>
+        </section>
 
 
 
@@ -66,8 +102,9 @@
 
     -->
 
+    </div>
 
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./Assets/JavaScript/script.js"></script>
 
 </body>

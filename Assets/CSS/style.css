@@ -2,10 +2,35 @@
     style.css
 */
 
-/* Fun Color Application */
-/*
-body{
-    background-color: #7fff00;
-    color: #fffaf0;
+
+.center_that {
+    text-align: center;
+    margin: 0 auto;
 }
-*/
+
+.opt_left {
+    text-align: left;
+}
+
+.opt_right {
+    text-align: right;
+}
+
+.description_p {
+    width: 80%;
+}
+
+.hide {
+    display: none;
+}
+
+/* Switching to small screen */
+
+@media screen and (max-width: 575.98px) {
+    .top_opts {
+        text-align: center;
+    }
+}
+
+
+

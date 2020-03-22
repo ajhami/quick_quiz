@@ -26,6 +26,8 @@
 //                                         }
 //                          }
 //
+// Check activity 5.19 cobweb!!
+//
 // Functions
 // answeredQuestion - attached to eventlistener and adds
 // score for correct answer and reduces points / time 
@@ -34,6 +36,10 @@
 // Event Listeners
 //
 
+var switchScreen = function() {
+    $("#main_page").addClass("hide");
+    $("#quiz_cont").removeClass("hide");
+}
 
-
+$("#quiz_btn").on("click", switchScreen);
 
