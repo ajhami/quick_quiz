@@ -1,6 +1,6 @@
 # Quick Quiz - Unit 4
 
-**Objective
+*Objective*
  
  * Create a multiple choice quiz for users to complete within a certain time frame. Users earn points based off of accuracy and speed. This assignment deploys features of DOM manipulation, JavaScript and jQuery features, and Local Storage properties.
 
