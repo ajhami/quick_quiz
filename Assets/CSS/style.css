@@ -24,6 +24,29 @@
     display: none;
 }
 
+#question_p {
+    margin: 20px 40px;
+}
+
+.ul_style {
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+.ans_btn {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: 2px solid #663399;
+    margin: 10px 0;
+}
+
+.submit_btn {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: 2px solid #663399;
+    margin: 0 20px;
+}
+
 /* Switching to small screen */
 
 @media screen and (max-width: 575.98px) {

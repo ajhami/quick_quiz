@@ -50,12 +50,12 @@
                 </a>
             </div>
             <div class="col-sm-6 opt_right top_opts">
-                Time: <span class="timer">60</span>
+                Time: <span class="timer"></span>
             </div>
         </section>
 
         <!-- Body of Main Page -->
-        <section class="row" id="main_page">
+        <section id="main_page" class="row">
             <div class="col-12 center_that">
                 <h1>
                     It's Quiz Time!
@@ -63,7 +63,7 @@
             </div>
             <div class="col-12 description_p center_that">
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto distinctio velit quibusdam, pariatur nam laudantium provident vel nemo optio quia veniam eum perspiciatis dicta nostrum. Aspernatur quia doloribus delectus accusamus!
+                    This quiz has been designed to test your general knowledge over five categories: History, Math, Science, Geography, and Entertainment. You have 60 seconds to answer 5 fun questions! You will each 10 points for each correct answer and can even earn bonus points in the end for completing the quiz with time to spare. Be careful: you will lose 5 points for each incorrect answer as well as be deducted 10 seconds from your time to complete the quiz... What are you waiting for? Quiz on!
                 </p>
             </div>
             <div class="col-12 center_that">
@@ -74,21 +74,36 @@
         </section>
 
 
+        
+        
+
+        <!--
+            Questions page
+            Highscores and timer remain
+            Question in a h2
+            4 buttons for 4 different options
+        -->
+        
         <!-- Test Appear -->
-        <section class="hide" id="quiz_cont">
-            <h1>You did it!!!</h1>
+        <section id="quiz_cont" class="hide">
+            <h1 id="category_header" class="center_that">Category Header</h1>
+            <p id="question_p">Question Paragraph</p>
+            <ul class="ul_style">
+                <li>
+                    <button id="ans1" class="ans_btn">a1</button>
+                </li>
+                <li>
+                    <button id="ans2" class="ans_btn">a2</button>
+                </li>
+                <li>
+                    <button id="ans3" class="ans_btn">a3</button>
+                </li>
+                <li>
+                    <button id="ans4" class="ans_btn">a4</button>
+                </li>
+            </ol>
         </section>
-
-
-
-    <!--
-        Questions page
-        Highscores and timer remain
-        Question in a h2
-        4 buttons for 4 different options
-    -->
-
-    
+        
 
 
     <!--
@@ -101,6 +116,26 @@
             submit button
 
     -->
+
+    <section id="final_screen" class="hide">
+        
+        <h1 class="center_that">
+            Finished!
+        </h1>
+        <hr>
+        <p>
+            Your final score is <span id="final_score"></span> points.
+        </p>
+
+        <form class="form-inline center_that">
+            <input type="text" class="form-control" placeholder="Enter Initials Here.">
+            <button type="submit">
+                Submit Score
+            </button>
+        </form>
+
+    </section>
+
 
     </div>
 
