@@ -22,26 +22,26 @@ $(".timer").text(time);
 // My CobWeb
 var questionObj = {
     category1 : {
-        categoryName : "Category 1",
+        categoryName : "Mathematics",
         questions : {
             question1 : {
-                question : "The First Question, Part 1",
-                answers : ["answer1.1.1", "answer2.1.1", "answer3.1.1", "answer4.1.1"],
+                question : "Joelle earns her regular pay of $7.50 per hour for up to 40 hours of work in a week. For each hour over 40 hours of work in a week, Joelle is paid 1.5 times her regular pay. How much does Joelle earn for a week in which she works 42 hours?",
+                answers : ["$322.50", "126.00", "378.00", "472.50"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
-                question : "The First Question, Part 2",
-                answers : ["answer1.2.1", "answer2.2.1", "answer3.2.1", "answer4.2.1"],
+                question : "Aaron is staying at a hotel that charges $99.95 per night plus tax for a room. A tax of 8% is applied to the room rate, and an additional onetime untaxed fee of $5.00 is charged by the hotel. Which of the following represents Aaron’s total charge, in dollars, for staying x nights?",
+                answers : ["(99.5 + 0.08x) + 5", "1.08(99.95x) + 5", "1.08(99.95x + 5)", "1.08(99.95 + 5)x"],
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "The First Question, Part 3",
-                answers : ["answer1.3.1", "answer2.3.1", "answer3.3.1", "answer4.3.1"],
+                question : "A company’s manager estimated that the cost C, in dollars, of producing n items is C equals 7 n plus 350. The company sells each item for $12. The company makes a profit when total income from selling a quantity of items is greater than the total cost of producing that quantity of items. Which of the following inequalities gives all possible values of n for which the manager estimates that the company will make a profit?",
+                answers : ["n < 70", "n < 84", "n > 70", "n > 84"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
             question4 : {
-                question : "The First Question, Part 4",
-                answers : ["answer1.4.1", "answer2.4.1", "answer3.4.1", "answer4.4.1"],
+                question : "At a primate reserve, the mean age of all the male primates is 15 years, and the mean age of all female primates is 19 years. Which of the following must be true about the mean age m of the combined group of male and female primates at the primate reserve?",
+                answers : ["m = 17", "m > 17", "m < 17", "15 < m < 19"],
                 answerType : ["Wrong", "Wrong", "Wrong", "Correct"]
             }
         }  
