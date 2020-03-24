@@ -13,11 +13,11 @@
 var score = 0;
 var initials = "";
 var categoryIndex = 0;
-var time = 60;
+var time = 90;
 var randQuestionNum = 0;
 
 // Display Time
-$(".timer").text(time);
+//$(".timer").text(time);
 
 // My CobWeb
 var questionObj = {
@@ -47,101 +47,101 @@ var questionObj = {
         }  
     },
     category2 : {
-        categoryName : "Category 2",
+        categoryName : "History",
         questions : {
             question1 : {
-                question : "The Second Question, Part 1",
-                answers : ["answer1.1.2", "answer2.1.2", "answer3.1.2", "answer4.1.2"],
+                question : "What was the first country to recognize Mexic's independence in 1836?",
+                answers : ["United States", "Canada", "Canada", "United Kingdom"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
-                question : "The Second Question, Part 2",
-                answers : ["answer1.2.2", "answer2.2.2", "answer3.2.2", "answer4.2.2"],
+                question : "Of which country was Greenland a colony until 1981?",
+                answers : ["Sweden", "Denmark", "Iceland", "Russia"],
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "The Second Question, Part 3",
-                answers : ["answer1.3.2", "answer2.3.2", "answer3.3.2", "answer4.3.2"],
+                question : "Which of the following was not a D-Day beach?",
+                answers : ["Gold", "Juno", "Reno", "Sword"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
             question4 : {
-                question : "The Second Question, Part 4",
-                answers : ["answer1.4.2", "answer2.4.2", "answer3.4.2", "answer4.4.2"],
+                question : "Which organization was awarded the Nobel Peace Prize in 1917?",
+                answers : ["Fathers for Justice", "The Police", "The Boy Scouts of America", "The Red Cross"],
                 answerType : ["Wrong", "Wrong", "Wrong", "Correct"]
             }
         }  
     },
     category3 : {
-        categoryName : "Category 3",
+        categoryName : "Science",
         questions : {
             question1 : {
-                question : "The Third Question, Part 1",
-                answers : ["answer1.1.3", "answer2.1.3", "answer3.1.3", "answer4.1.3"],
+                question : "Hormones are chemicals of which system of the body?",
+                answers : ["Endocrine", "Cardiovascular", "Excretory", "Nervous"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
-                question : "The Third Question, Part 2",
-                answers : ["answer1.2.3", "answer2.2.3", "answer3.2.3", "answer4.2.3"],
+                question : "About how mucuh of the Earth is covered by the ocean?",
+                answers : ["100%", "70%", "40%", "10%"],
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "The Third Question, Part 3",
-                answers : ["answer1.3.3", "answer2.3.3", "answer3.3.3", "answer4.3.3"],
+                question : "What was named after a hydrogen bomb test?",
+                answers : ["Hula Hoop", "Spitfire", "Bikini", "Matchbox"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
             question4 : {
-                question : "The Third Question, Part 4",
-                answers : ["answer1.4.3", "answer2.4.3", "answer3.4.3", "answer4.4.3"],
+                question : "The word 'plasma' describes what?",
+                answers : ["A liquid component of blood", "A state of matter", "Neither", "Both"],
                 answerType : ["Wrong", "Wrong", "Wrong", "Correct"]
             }
         }  
     },
     category4 : {
-        categoryName : "Category 4",
+        categoryName : "Geography",
         questions : {
             question1 : {
-                question : "The Forth Question, Part 1",
-                answers : ["answer1.1.4", "answer2.1.4", "answer3.1.4", "answer4.1.4"],
+                question : "What is the capital of Florida?",
+                answers : ["Tallahassee", "Orlando", "Jacksonville", "Tampa Bay"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
-                question : "The Forth Question, Part 2",
-                answers : ["answer1.2.4", "answer2.2.4", "answer3.2.4", "answer4.2.4"],
+                question : "What is the smallest state in the United States?",
+                answers : ["New Jersey", "Rhode Island", "Massachusetts", "Conneticut"],
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "The Forth Question, Part 3",
-                answers : ["answer1.3.4", "answer2.3.4", "answer3.3.4", "answer4.3.4"],
+                question : "What is the largest country in the world by area?",
+                answers : ["Brazil", "Canada", "Russia", "China"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
             question4 : {
-                question : "The Forth Question, Part 4",
-                answers : ["answer1.4.4", "answer2.4.4", "answer3.4.4", "answer4.4.4"],
+                question : "One of the ancient world wonders, the 'Hanging Gardens', was found in which city?",
+                answers : ["Rome", "Alexandria", "Athens", "Babylon"],
                 answerType : ["Wrong", "Wrong", "Wrong", "Correct"]
             }
         }  
     },
     category5 : {
-        categoryName : "Category 5",
+        categoryName : "Entertainment",
         questions : {
             question1 : {
-                question : "The Fifth Question, Part 1",
-                answers : ["answer1.1.5", "answer2.1.5", "answer3.1.5", "answer4.1.5"],
+                question : "Richard Hatch is famously known as the first winner of which reality TV show?",
+                answers : ["Survivor", "The Bachelor", "Jeopardy", "Celebrity Apprentice"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
-                question : "The Fifth Question, Part 2",
-                answers : ["answer1.2.5", "answer2.2.5", "answer3.2.5", "answer4.2.5"],
+                question : "Kevin Costner produces and stars in the 1990 Academy Award's Best Picture:",
+                answers : ["Ghost", "Dances with Wolves", "Goodfellas", "The Silence of the Lambs"],
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "The Fifth Question, Part 3",
-                answers : ["answer1.3.5", "answer2.3.5", "answer3.3.5", "answer4.3.5"],
+                question : "What movie does not have Brad Pitt in it?",
+                answers : ["Oceans 13", "Burn After Reading", "300", "Fight Club"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
             question4 : {
-                question : "The Fifth Question, Part 4",
-                answers : ["answer1.4.5", "answer2.4.5", "answer3.4.5", "answer4.4.5"],
+                question : "Ozzy Osbourne is the former lead vocalist of which classic metal band?",
+                answers : ["Led Zeppelin", "Guns N' Roses", "Iron Maiden", "Black Sabbath"],
                 answerType : ["Wrong", "Wrong", "Wrong", "Correct"]
             }
         }  
@@ -161,50 +161,64 @@ var questionObj = {
 // Event Listeners
 //
 
+function startTimer() {
+    time = 90;
+
+    var timerInterval = setInterval(function() {
+    time--;
+    $(".timer").text(time);
+    console.log(time);
+
+    if(time < 1) {
+        finalScreen();
+        clearInterval(timerInterval);
+    }
+
+    }, 1000);
+}
+
+function quickMessage(message) {
+    var messageTime = 4;
+    $("#quick_message").removeClass("hide");
+    $("#answer_status").text(message);
+
+    var quickInterval = setInterval(function() {
+    messageTime--;
+
+    if(messageTime < 1) {
+        clearInterval(quickInterval);
+        $("#quick_message").addClass("hide");
+    }
+
+    }, 200);
+}
+
+
+
 var switchScreen = function(category) {
     randQuestionNum = Math.floor(Math.random() * 4);
-    //$("#main_page").addClass("hide");
-    //$("#quiz_cont").removeClass("hide");
 
-    // Console Log Tests on Quiz Page
-    /*
     $("#category_header").text(category.categoryName);
-    console.log(category.questions.question1.question);
-    $("#question_p").text(category.questions.question1.question);
-    console.log(category.questions.question1.answers[0]);
-    $("#ans1").text(category.questions.question1.answers[0]);
-    console.log(category.questions.question1.answers[1]);
-    $("#ans2").text(category.questions.question1.answers[1]);
-    console.log(category.questions.question1.answers[2]);
-    $("#ans3").text(category.questions.question1.answers[2]);
-    console.log(category.questions.question1.answers[3]);
-    $("#ans4").text(category.questions.question1.answers[3]);
-    */
-   $("#category_header").text(category.categoryName);
-   $("#question_p").text(questionNum[randQuestionNum].question);
-   $("#ans1").text(questionNum[randQuestionNum].answers[0]);
-   $("#ans2").text(questionNum[randQuestionNum].answers[1]);
-   $("#ans3").text(questionNum[randQuestionNum].answers[2]);
-   $("#ans4").text(questionNum[randQuestionNum].answers[3]);
+    $("#question_p").text(questionNum[randQuestionNum].question);
+    $("#ans1").text(questionNum[randQuestionNum].answers[0]);
+    $("#ans2").text(questionNum[randQuestionNum].answers[1]);
+    $("#ans3").text(questionNum[randQuestionNum].answers[2]);
+    $("#ans4").text(questionNum[randQuestionNum].answers[3]);
 
-    //console.log("Current Category Index = " + categoryIndex);
     categoryIndex++;
-    //console.log("Category Index switching to " + categoryIndex);
-    //randQuestionNum = Math.floor(Math.random() * 4);
-    //console.log("Random Number = " + randQuestionNum);
 }
 
 var answerSelect = function(userAnswer) {
-    console.log("Random Number = " + randQuestionNum);
-    console.log("Answer Type Selected = " + userAnswer);
-
     // if the event selected is correct, score = score + 10
     // else score = score - 5 and time = time - 10
     if(userAnswer === "Correct"){
+        quickMessage("Correct!");
         score = score + 10;
     }
     else {
+        quickMessage("Wrong");        
         score = score - 5;
+
         if(time < 11) {
             time = 0;
         }
@@ -213,8 +227,6 @@ var answerSelect = function(userAnswer) {
         }
     }
     
-    console.log("Current Score = " + score);
-
     // if categoryIndex > 4, then run finalScreen function
     // else run switchScreen(categories[categoryIndex])
     if(categoryIndex > 4) {
@@ -229,6 +241,13 @@ var answerSelect = function(userAnswer) {
 
 var finalScreen = function() {
     $(".timer").text("0");
+
+    // Calculate final score with bonus time
+    if(time > 1) {
+        score = score + (Math.floor(time / 3));
+    }
+    time = 0;
+
     // Hide quiz_cont and unhide final_screen
     $("#quiz_cont").addClass("hide");
     $("#final_screen").removeClass("hide");
@@ -241,11 +260,13 @@ var questionNum = [categories[categoryIndex].questions.question1, categories[cat
 
 var clickForward = function() {switchScreen(categories[categoryIndex])};
 
+
 // Starting the Quiz
 $("#quiz_btn").on("click", function() {
     $("#main_page").addClass("hide");
     $("#quiz_cont").removeClass("hide");
     clickForward();
+    startTimer();
 });
 
 // Taking Quiz

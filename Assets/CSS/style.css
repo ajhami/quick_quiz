@@ -2,6 +2,18 @@
     style.css
 */
 
+a {
+    color: #8a2be8;
+}
+
+#quiz_btn {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: 2px solid #663399;
+    margin: 20px 0;
+    width: 30%;
+    font-size: 30px;
+}
 
 .center_that {
     text-align: center;
@@ -13,6 +25,7 @@
 }
 
 .opt_right {
+    color: #8a2be8;
     text-align: right;
 }
 
@@ -37,7 +50,9 @@
     background-color: #8a2be2;
     color: #ffffff;
     border: 2px solid #663399;
+    padding: 5px;
     margin: 10px 0;
+    font-size: 20px;
 }
 
 .submit_btn {
@@ -45,6 +60,12 @@
     color: #ffffff;
     border: 2px solid #663399;
     margin: 0 20px;
+}
+
+#quick_message {
+    color: #663594ab;
+    font-style: italic;
+    
 }
 
 /* Switching to small screen */
