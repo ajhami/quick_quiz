@@ -22,25 +22,8 @@
 <body>
 
     <div class="container">
-    
-    <!--
-        Psedocode for html layout
 
-        Break up into 3 different page options and chose to hide and show 
-        page parts when prompted through (view key/click activity)
-
-        Pages include Title, Questions, and Finished Page
-    -->
-
-
-
-    <!--
-        Title page
-        Top row with highscore link in the top left and a timer in the top right
-        Header saying "(Coding) Quiz Challange"
-        Body Text describing the quiz
-        Button to start the quiz
-    -->
+        <!-- Title page -->
 
         <!-- Top Bar -->
         <section class="row">
@@ -74,17 +57,7 @@
         </section>
 
 
-        
-        
-
-        <!--
-            Questions page
-            Highscores and timer remain
-            Question in a h2
-            4 buttons for 4 different options
-        -->
-        
-        <!-- Test Appear -->
+        <!-- Questions Page -->
         <section id="quiz_cont" class="hide">
             <h1 id="category_header" class="center_that">Category Header</h1>
             <p id="question_p">Question Paragraph</p>
@@ -105,18 +78,7 @@
         </section>
         
 
-
-    <!--
-        Finished Page
-        Highscores and timer page remain
-        h2 tag "All Done!"
-        Your final score is (score).
-        Enter Initials: 
-            [a form box to add initials (add maybe use trimming functions to remove spaces and take first 3 characters)]
-            submit button
-
-    -->
-
+    <!-- Finished Page -->
     <section id="final_screen" class="hide">
         
         <h1 class="center_that">
@@ -127,8 +89,8 @@
             Your final score is <span id="final_score"></span> points.
         </p>
 
-        <form class="form-inline center_that">
-            <input type="text" class="form-control" placeholder="Enter Initials Here.">
+        <form id="initials_form" class="form-inline center_that">
+            <input type="text" id="initials" class="form-control" placeholder="Enter Initials Here.">
             <button type="submit" class="submit_btn">
                 Submit Score
             </button>
@@ -137,6 +99,7 @@
     </section>
 
 
+    <!-- Pop Up Message, Verify you Answer -->
     <section id="quick_message" class="hide">
         <hr>
         <h2 id="answer_status"></h2>

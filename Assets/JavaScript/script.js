@@ -3,23 +3,17 @@
 /////////////////
 
 
-/////////////////////
-// Pseudocode
-//
-//
-// variables
-// score, initials
 
+// variables
 var score = 0;
 var initials = "";
 var categoryIndex = 0;
 var time = 90;
 var randQuestionNum = 0;
+var highScores = [];
+var initialsText = "";
 
-// Display Time
-//$(".timer").text(time);
-
-// My CobWeb
+// Questions Object
 var questionObj = {
     category1 : {
         categoryName : "Mathematics",
@@ -50,8 +44,8 @@ var questionObj = {
         categoryName : "History",
         questions : {
             question1 : {
-                question : "What was the first country to recognize Mexic's independence in 1836?",
-                answers : ["United States", "Canada", "Canada", "United Kingdom"],
+                question : "What was the first country to recognize Mexico's independence in 1836?",
+                answers : ["United States", "Spain", "Canada", "United Kingdom"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
@@ -147,19 +141,10 @@ var questionObj = {
         }  
     }
 
-
-
-
-
 }
 
-// Functions
-// answeredQuestion - attached to eventlistener and adds
-// score for correct answer and reduces points / time 
-// storeScore - take score and initials and store values
-// 
-// Event Listeners
-//
+
+// Functions and Event Listeners
 
 function startTimer() {
     time = 90;
@@ -167,7 +152,6 @@ function startTimer() {
     var timerInterval = setInterval(function() {
     time--;
     $(".timer").text(time);
-    console.log(time);
 
     if(time < 1) {
         finalScreen();
@@ -194,7 +178,6 @@ function quickMessage(message) {
 }
 
 
-
 var switchScreen = function(category) {
     randQuestionNum = Math.floor(Math.random() * 4);
 
@@ -210,7 +193,7 @@ var switchScreen = function(category) {
 
 var answerSelect = function(userAnswer) {
     // if the event selected is correct, score = score + 10
-    // else score = score - 5 and time = time - 10
+    // otherwise, deduct score and time
     if(userAnswer === "Correct"){
         quickMessage("Correct!");
         score = score + 10;
@@ -228,7 +211,7 @@ var answerSelect = function(userAnswer) {
     }
     
     // if categoryIndex > 4, then run finalScreen function
-    // else run switchScreen(categories[categoryIndex])
+    // otherwise, switch out category and questions
     if(categoryIndex > 4) {
         finalScreen();
     }
@@ -246,6 +229,7 @@ var finalScreen = function() {
     if(time > 1) {
         score = score + (Math.floor(time / 3));
     }
+
     time = 0;
 
     // Hide quiz_cont and unhide final_screen
@@ -254,11 +238,12 @@ var finalScreen = function() {
     $("#final_score").text(score);
 }
 
-
+// Arrays for accessing proper values from the greater Questions Object
 var categories = [questionObj.category1, questionObj.category2, questionObj.category3, questionObj.category4, questionObj.category5];
 var questionNum = [categories[categoryIndex].questions.question1, categories[categoryIndex].questions.question2, categories[categoryIndex].questions.question3, categories[categoryIndex].questions.question4];
 
 var clickForward = function() {switchScreen(categories[categoryIndex])};
+
 
 
 // Starting the Quiz
@@ -286,3 +271,53 @@ $("#ans3").on("click", choseAns3);
 // Chooses ans4
 var choseAns4 = function() {answerSelect(questionNum[randQuestionNum].answerType[3])};
 $("#ans4").on("click", choseAns4);
+
+
+
+
+// High Scores (Working Progress)
+
+function renderHighScores() {
+    $("#hs_list").text("");
+
+    for(var i = 0; i < highScores.length; i++) {
+        var highscore = highScores[i];
+
+        var li = document.createElement("li");
+        $(li).text(highscore);
+        $(li).attr("data-index", i);
+
+        $("#hs_list").append(li);
+    }
+}
+
+function init() {
+    var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+
+    if(storedHighScores !== null) {
+        highScores = storedHighScores;
+    }
+
+    renderHighScores();
+}
+
+function storeHighScores() {
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
+$("#initials_form").on("submit", function(event) {
+    //event.preventDefault();
+
+    initialsText = $("#initials").val().substring(0,3);
+
+    if(initialsText === "") {
+        return;
+    }
+
+
+    highScores.push(initialsText + " - " + score);
+
+    storeHighScores();
+    renderHighScores();
+
+});
