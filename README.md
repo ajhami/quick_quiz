@@ -12,7 +12,7 @@ index.html
  * Main page of the application. User interacts with three main displays from the homepage including, game description, question prompts, and score submission at the end.
 
 highscores.html
- * Page displaying locally stored data of prior user initials and scores. (feature currently disabled. Storage of the initials and high score can be viewed through application storage on web inspection).
+ * Page displaying locally stored data of prior user initials and scores.
  
 style.css
  * contains styling properties specifically to this project. Contains property to make page layouts to appear and disappear when appropriate.
@@ -20,7 +20,5 @@ style.css
 script.js
  * Main JavaScript file, implementing functionality to website's features.
  
- P.S. - High Scores functionality currently not working properly. Issue will be troubleshot with refactoring and collaboration.
-
 
 © 2020 Alexander James Hamilton
