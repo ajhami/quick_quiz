@@ -8,10 +8,12 @@
 var score = 0;
 var initials = "";
 var categoryIndex = 0;
-var time = 90;
+var time = 75;
 var randQuestionNum = 0;
-var highScores = [];
+var answeredCorrect = 0;
+//var highScores = [];
 var initialsText = "";
+var highScoresList = document.querySelector("#hs_list") || {};
 
 // Questions Object
 var questionObj = {
@@ -20,7 +22,7 @@ var questionObj = {
         questions : {
             question1 : {
                 question : "Joelle earns her regular pay of $7.50 per hour for up to 40 hours of work in a week. For each hour over 40 hours of work in a week, Joelle is paid 1.5 times her regular pay. How much does Joelle earn for a week in which she works 42 hours?",
-                answers : ["$322.50", "126.00", "378.00", "472.50"],
+                answers : ["$322.50", "$126.00", "$378.00", "$472.50"],
                 answerType : ["Correct", "Wrong", "Wrong", "Wrong"]
             },
             question2 : {
@@ -54,7 +56,7 @@ var questionObj = {
                 answerType : ["Wrong", "Correct", "Wrong", "Wrong"]
             },
             question3 : {
-                question : "Which of the following was not a D-Day beach?",
+                question : "Which of the following was NOT a D-Day beach?",
                 answers : ["Gold", "Juno", "Reno", "Sword"],
                 answerType : ["Wrong", "Wrong", "Correct", "Wrong"]
             },
@@ -147,7 +149,6 @@ var questionObj = {
 // Functions and Event Listeners
 
 function startTimer() {
-    time = 90;
 
     var timerInterval = setInterval(function() {
     time--;
@@ -195,19 +196,31 @@ var answerSelect = function(userAnswer) {
     // if the event selected is correct, score = score + 10
     // otherwise, deduct score and time
     if(userAnswer === "Correct"){
+        answeredCorrect++;
+        score = score + 15;
+        
         quickMessage("Correct!");
-        score = score + 10;
     }
-    else {
-        quickMessage("Wrong");        
-        score = score - 5;
-
+    else {        
+        
         if(time < 11) {
             time = 0;
         }
         else{
             time = time - 10;
         }
+
+        if(score >= 10){
+            score = score - 10;
+        }
+        else {
+            score = 0;
+        }
+        
+        quickMessage("Wrong");
+
+
+
     }
     
     // if categoryIndex > 4, then run finalScreen function
@@ -223,19 +236,28 @@ var answerSelect = function(userAnswer) {
 }
 
 var finalScreen = function() {
-    $(".timer").text("0");
+    //$(".timer").text("0");
 
-    // Calculate final score with bonus time
-    if(time > 1) {
-        score = score + (Math.floor(time / 3));
+    // If the user gets 3 or more questions correct, add bonus points
+    if(answeredCorrect >= 3) {
+        // Maximum of 30 bonus points for completing the quiz with 50 seconds remaining
+        if(time > 50){
+            score = score + 30;
+        }
+        else{
+            score = score + (Math.floor(time / 10) * 5);
+        }
     }
 
+    $("#final_score").text(score);
+
     time = 0;
+    $(".timer").text(time);
 
     // Hide quiz_cont and unhide final_screen
+    //$("#final_score").text(score);
     $("#quiz_cont").addClass("hide");
     $("#final_screen").removeClass("hide");
-    $("#final_score").text(score);
 }
 
 // Arrays for accessing proper values from the greater Questions Object
@@ -274,50 +296,41 @@ $("#ans4").on("click", choseAns4);
 
 
 
+//CHECK IF NECESSARY
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-// High Scores (Working Progress)
 
-function renderHighScores() {
-    $("#hs_list").text("");
+var saveScore = function(event) {
+    event.preventDefault();
+    console.log("Submitted");
+    console.log("High Scores in Local Storage before Submission: ");
+    console.log(highScores);
 
-    for(var i = 0; i < highScores.length; i++) {
-        var highscore = highScores[i];
-
-        var li = document.createElement("li");
-        $(li).text(highscore);
-        $(li).attr("data-index", i);
-
-        $("#hs_list").append(li);
-    }
-}
-
-function init() {
-    var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
-
-    if(storedHighScores !== null) {
-        highScores = storedHighScores;
-    }
-
-    renderHighScores();
-}
-
-function storeHighScores() {
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-}
-
-$("#initials_form").on("submit", function(event) {
-    //event.preventDefault();
-
-    initialsText = $("#initials").val().substring(0,3);
-
-    if(initialsText === "") {
+    if($("#initials").val() === "") {
+        //event.preventDefault();
+        console.log("No initials entry!");
+        quickMessage("Please enter your initials!");
         return;
     }
 
+    const savedScore = {
+        playerScore : score,
+        playerInitials : $("#initials").val().substring(0,3)
+    }
+    console.log("Saved Score:");
+    console.log(savedScore);
 
-    highScores.push(initialsText + " - " + score);
+    highScores.push(savedScore);
+    // Sort function will compare scores within the highScores array and return in descending order
+    highScores.sort((a, b) =>  b.playerScore - a.playerScore);
+    // Keep only the top 5 scores
+    highScores.splice(5);
+    console.log("High Scores in Local Storage after Submission: ");
+    console.log(highScores);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    //renderHighScores();
+    location.reload();
 
-    storeHighScores();
-    renderHighScores();
+}
 
-});
+$("#initials_form").on("submit", saveScore);

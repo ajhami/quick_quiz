@@ -46,7 +46,7 @@ a {
     margin-left: 30px;
 }
 
-.ans_btn {
+.ans_btn, .hs_btn {
     background-color: #8a2be2;
     color: #ffffff;
     border: 2px solid #663399;
