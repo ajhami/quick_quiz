@@ -59,8 +59,8 @@
 
         <!-- Questions Page -->
         <section id="quiz_cont" class="hide">
-            <h1 id="category_header" class="center_that">Category Header</h1>
-            <p id="question_p">Question Paragraph</p>
+            <h1 id="category_header" class="center_that"></h1>
+            <p id="question_p"></p>
             <ul class="ul_style">
                 <li>
                     <button id="ans1" class="ans_btn">a1</button>
@@ -78,32 +78,32 @@
         </section>
         
 
-    <!-- Finished Page -->
-    <section id="final_screen" class="hide">
+        <!-- Finished Page -->
+        <section id="final_screen" class="hide">
+            
+            <h1 class="center_that">
+                Finished!
+            </h1>
+            <hr>
+            <p>
+                Your final score is <span id="final_score"></span> points.
+            </p>
+
+            <form id="initials_form" class="form-inline center_that">
+                <input type="text" id="initials" class="form-control" placeholder="Enter Initials Here.">
+                <button type="submit" class="submit_btn">
+                    Submit Score
+                </button>
+            </form>
+
+        </section>
+
         
-        <h1 class="center_that">
-            Finished!
-        </h1>
-        <hr>
-        <p>
-            Your final score is <span id="final_score"></span> points.
-        </p>
-
-        <form id="initials_form" class="form-inline center_that">
-            <input type="text" id="initials" class="form-control" placeholder="Enter Initials Here.">
-            <button type="submit" class="submit_btn">
-                Submit Score
-            </button>
-        </form>
-
-    </section>
-
-
-    <!-- Pop Up Message, Verify you Answer -->
-    <section id="quick_message" class="hide">
-        <hr>
-        <h2 id="answer_status"></h2>
-    </section>
+        <!-- Pop Up Message, Verify you Answer -->
+        <section id="quick_message" class="hide">
+            <hr>
+            <h2 id="answer_status"></h2>
+        </section>
 
     </div>
 

@@ -1,3 +1,7 @@
+/////////////////////
+/// highscores.js ///
+/////////////////////
+
 var hsList = document.querySelector("#hs_list");
 
 $(document).ready(function(){
@@ -11,10 +15,8 @@ $(document).ready(function(){
             var highscore = highScores[i];
             var newLI = document.createElement('li');
             var myText = highscore.playerInitials + " - " + highscore.playerScore;
-            console.log(myText);
             newLI.textContent = myText;
-            console.log("New Element = " + newLI.textContent);
-            
+            newLI.setAttribute("class", "hs_style");
             hsList.appendChild(newLI);
             
         }
@@ -26,7 +28,6 @@ $(document).ready(function(){
 
 
     var returnToPage = function(){
-        console.log("Is this working?");
         window.location.assign("./../../index.html");
     }
 
@@ -34,8 +35,8 @@ $(document).ready(function(){
 
     var clearHSL = function() {
         window.localStorage.clear();
-        location.reload();
         renderHighScores();
+        location.reload();
     };
     
     $("#clear_scores").on("click", clearHSL);

@@ -11,7 +11,6 @@ var categoryIndex = 0;
 var time = 75;
 var randQuestionNum = 0;
 var answeredCorrect = 0;
-//var highScores = [];
 var initialsText = "";
 var highScoresList = document.querySelector("#hs_list") || {};
 
@@ -147,18 +146,17 @@ var questionObj = {
 
 
 // Functions and Event Listeners
-
 function startTimer() {
 
     var timerInterval = setInterval(function() {
-    time--;
-    $(".timer").text(time);
+        
+        time--;
+        $(".timer").text(time);
 
-    if(time < 1) {
-        finalScreen();
-        clearInterval(timerInterval);
-    }
-
+        if(time < 1) {
+            finalScreen();
+            clearInterval(timerInterval);
+        }
     }, 1000);
 }
 
@@ -168,14 +166,13 @@ function quickMessage(message) {
     $("#answer_status").text(message);
 
     var quickInterval = setInterval(function() {
-    messageTime--;
+        messageTime--;
 
-    if(messageTime < 1) {
-        clearInterval(quickInterval);
-        $("#quick_message").addClass("hide");
-    }
-
-    }, 200);
+        if(messageTime < 1) {
+            clearInterval(quickInterval);
+            $("#quick_message").addClass("hide");
+        }
+    }, 100);
 }
 
 
@@ -193,8 +190,7 @@ var switchScreen = function(category) {
 }
 
 var answerSelect = function(userAnswer) {
-    // if the event selected is correct, score = score + 10
-    // otherwise, deduct score and time
+
     if(userAnswer === "Correct"){
         answeredCorrect++;
         score = score + 15;
@@ -236,7 +232,6 @@ var answerSelect = function(userAnswer) {
 }
 
 var finalScreen = function() {
-    //$(".timer").text("0");
 
     // If the user gets 3 or more questions correct, add bonus points
     if(answeredCorrect >= 3) {
@@ -255,7 +250,6 @@ var finalScreen = function() {
     $(".timer").text(time);
 
     // Hide quiz_cont and unhide final_screen
-    //$("#final_score").text(score);
     $("#quiz_cont").addClass("hide");
     $("#final_screen").removeClass("hide");
 }
@@ -276,7 +270,9 @@ $("#quiz_btn").on("click", function() {
     startTimer();
 });
 
-// Taking Quiz
+
+
+// Taking the Quiz
 
 // Chooses ans1
 var choseAns1 = function() {answerSelect(questionNum[randQuestionNum].answerType[0])};
@@ -296,9 +292,9 @@ $("#ans4").on("click", choseAns4);
 
 
 
-//CHECK IF NECESSARY
-var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+// Storing the High Score with Initials
 
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var saveScore = function(event) {
     event.preventDefault();
@@ -307,7 +303,6 @@ var saveScore = function(event) {
     console.log(highScores);
 
     if($("#initials").val() === "") {
-        //event.preventDefault();
         console.log("No initials entry!");
         quickMessage("Please enter your initials!");
         return;

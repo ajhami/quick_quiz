@@ -1,6 +1,9 @@
 /*
     style.css
 */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 a {
     color: #8a2be8;
@@ -30,7 +33,8 @@ a {
 }
 
 .description_p {
-    width: 80%;
+    width: 65%;
+    font-size: 18px;
 }
 
 .hide {
@@ -39,6 +43,8 @@ a {
 
 #question_p {
     margin: 20px 40px;
+    width: 75%;
+    font-size: 17px;
 }
 
 .ul_style {
@@ -68,8 +74,22 @@ a {
     
 }
 
-/* Switching to small screen */
+.top_5 {
+    color: #663399;
+}
 
+.purple_lines {
+    color: #572c81;
+    width: 25%;
+    height: 10px;
+}
+
+.hs_style {
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+/* Switching to small screen */
 @media screen and (max-width: 575.98px) {
     .top_opts {
         text-align: center;
